@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/frontFragment">
+
+    <fragment
+        android:id="@+id/frontFragment"
+        android:name="com.example.animationgm.ui.fragments.FrontFragment"
+        android:label="fragment_front"
+        tools:layout="@layout/fragment_front" >
+        <action
+            android:id="@+id/action_frontFragment_to_leftFragment"
+            app:destination="@id/leftFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_frontFragment_to_rightFragment"
+            app:destination="@id/rightFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/leftFragment"
+        android:name="com.example.animationgm.ui.fragments.LeftFragment"
+        android:label="fragment_left"
+        tools:layout="@layout/fragment_left" >
+        <action
+            android:id="@+id/action_leftFragment_to_frontFragment2"
+            app:destination="@id/frontFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rightFragment"
+        android:name="com.example.animationgm.ui.fragments.RightFragment"
+        android:label="fragment_right"
+        tools:layout="@layout/fragment_right" >
+        <action
+            android:id="@+id/action_rightFragment_to_frontFragment"
+            app:destination="@id/frontFragment" />
+    </fragment>
+</navigation>
